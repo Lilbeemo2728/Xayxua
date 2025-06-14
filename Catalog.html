@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="catalog-data.js"></script>
+    
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="main-content">
+        <div class="catalog-wrapper">
+            <div class="catalog-page">
+                <aside class="catalog-sidebar">
+                    <div class="sidebar-header">
+                        <span>Filters</span>
+                        <button class="clear-filters-btn" onclick="clearAllFilters()">Clear All</button>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Categories</h4>
+                        <label><input type="checkbox" class="category-checkbox" value="Star Wars"> Star Wars</label>
+                        <label><input type="checkbox" class="category-checkbox" value="Technic"> Technic</label>
+                        <label><input type="checkbox" class="category-checkbox" value="Creator"> Creator</label>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Complexity</h4>
+                        <label><input type="checkbox" class="complexity-checkbox" value="1"> ★☆☆☆☆</label>
+                        <label><input type="checkbox" class="complexity-checkbox" value="2"> ★★☆☆☆</label>
+                        <label><input type="checkbox" class="complexity-checkbox" value="3"> ★★★☆☆</label>
+                        <label><input type="checkbox" class="complexity-checkbox" value="4"> ★★★★☆</label>
+                        <label><input type="checkbox" class="complexity-checkbox" value="5"> ★★★★★</label>
+                    </div>
+                </aside>
+                <main class="catalog-main">
+                    <div class="catalog-bar">
+                        <div></div>
+                        <div class="sort-group">
+                            <span>Sort by:</span>
+                            <select id="sortSelect">
+                                <option value="featured">Featured</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="name-asc">Name: A-Z</option>
+                                <option value="name-desc">Name: Z-A</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="catalog-grid" id="catalogGrid"></div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    
+    <script src="Catalog-filter.js"></script>
+    <script src="SPA.js"></script>
+</body>
+</html>
