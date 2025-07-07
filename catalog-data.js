@@ -1,7 +1,7 @@
 const catalogItems = [
     {
         id: 1,
-        title: "Space Explorer Station",
+        title: "Phố đường tàu", 
         images: ["Img/ChuBin.jpg"], // <-- use images array
         category: "Space",
         complexity: 4,
