@@ -1,6 +1,9 @@
 function loadPage(url, addToHistory = true) {
     fetch(url)
-        .then(res => res.text())
+        .then(res => {
+            if (!res.ok) throw new Error('Page not found');
+            return res.text();
+        })
         .then(html => {
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
@@ -12,12 +15,15 @@ function loadPage(url, addToHistory = true) {
                 }
                 attachNavEvents();
 
-                // If this is the catalog page, initialize catalog
+                // Nếu là trang catalog thì khởi tạo lại
                 if (url.includes('Catalog.html')) {
-                    attachCatalogEvents();
-                    filterCatalog();
+                    attachCatalogEvents?.();
+                    filterCatalog?.();
                 }
             }
+        })
+        .catch(() => {
+            document.querySelector('.main-content').innerHTML = '<h1>404 - Trang không tồn tại</h1>';
         });
 }
 
@@ -25,7 +31,7 @@ function attachNavEvents() {
     document.querySelectorAll('a[href$=".html"]').forEach(link => {
         const href = link.getAttribute('href');
         if (href && href.endsWith('.html')) {
-            link.onclick = function(e) {
+            link.onclick = function (e) {
                 e.preventDefault();
                 loadPage(href);
             };
@@ -37,7 +43,7 @@ function enableMenuToggle() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     if (menuToggle && navLinks) {
-        menuToggle.onclick = function() {
+        menuToggle.onclick = function () {
             navLinks.classList.toggle('show');
         };
     }
@@ -52,17 +58,22 @@ function loadHTML(selector, url, callback) {
         });
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-    loadHTML('#header-placeholder', 'header.html', function() {
+window.addEventListener('DOMContentLoaded', function () {
+    loadHTML('#header-placeholder', 'header.html', function () {
         enableMenuToggle();
-        attachNavEvents(); // Attach SPA nav to header links
+        attachNavEvents(); // Gắn lại sự kiện nav sau khi header load
     });
-    loadHTML('#footer-placeholder', 'footer.html', function() {
-        attachNavEvents(); // Attach SPA nav to footer links
+    loadHTML('#footer-placeholder', 'footer.html', function () {
+        attachNavEvents(); // Gắn lại sự kiện nav sau khi footer load
     });
-    // Do NOT call attachNavEvents() globally here!
+
+    // Tải trang chính xác khi truy cập trực tiếp
+    const path = location.pathname.split('/').pop() || 'index.html';
+    loadPage(path, false);
 });
 
+// Khi người dùng bấm nút quay lại/trở về
 window.addEventListener('popstate', () => {
-    loadPage(location.pathname, false);
+    const path = location.pathname.split('/').pop() || 'index.html';
+    loadPage(path, false);
 });
