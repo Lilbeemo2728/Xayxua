@@ -24,7 +24,7 @@
     font-size: 20px;
 }
 .footer-section a {
-    color: #ffee00;
+    color: #ffda00;
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -113,5 +113,5 @@ body {
 }
 .social-icon img:hover {
     transform: scale(1.15);
-    filter: brightness(0) invert(1) drop-shadow(0 0 4px #ffee00);
+    filter: brightness(0) invert(1) drop-shadow(0 0 4px #ffda00);
 }

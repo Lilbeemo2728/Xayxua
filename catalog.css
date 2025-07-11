@@ -1,10 +1,4 @@
-body {
-    background: #fdecd6;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
+
 .catalog-page {
     display: flex;
     align-items: flex-start;
@@ -161,7 +155,7 @@ body {
     position: absolute;
     top: 18px;
     right: 18px;
-    background: #ffee00;
+    background: #ffda00;
     color: #222;
     font-size: 1rem;
     font-weight: 700;

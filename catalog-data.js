@@ -8,7 +8,7 @@ const catalogItems = [
         pieces: 1250,
         price: 149.99,
         featured: true,
-        description: "An incredible custom space station with modular sections, landing pad, and detailed interior. Perfect for space exploration enthusiasts!",
+        description: "A detailed model of a bustling train street scene, complete with moving trains and intricate buildings.",
         details: [
             "Difficulty Level: Hard",
             "Age Recommendation: 12+",
