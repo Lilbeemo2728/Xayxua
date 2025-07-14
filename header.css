@@ -9,10 +9,12 @@ body {
                 background-color: #de0058;
                 height: 100px;
                 width: 100%;
-                position: sticky;
                 top: 0px;
+                transition: all 0.2s ease-in-out;
+                position: sticky;
                 
             }
+            
             .Home-button,.Catalog-button,.FAQ-button,
             .About-button,.Contact-button {
                 background-color: #de0058;
@@ -27,7 +29,7 @@ body {
                 backface-visibility: hidden;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
-                font-weight: 500;
+                font-weight: 550;
                 will-change: transform;
                 
             }
@@ -85,7 +87,7 @@ body {
 
             body {
                 background-color: #00805d;
-                font-family: Arial, sans-serif;
+                font-family: 'PT Sans', sans-serif;
             }
 
             /* Hide menu button on desktop */
@@ -135,6 +137,7 @@ body {
 }
 .main-content {
     padding: 0px;
+    display: inline-block;
 }
 
 /* Responsive styles */

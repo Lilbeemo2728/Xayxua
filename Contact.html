@@ -1,21 +1,113 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Xây Xưa</title>
         <link rel="icon" href="Img/avanobg.webp" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         <link rel="stylesheet" href="footer.css">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="catalog.css">
+        <link rel="stylesheet" href="product-detail.css">
+        <script src="Catalog-filter.js"></script>
+        <script src="catalog-data.js"></script>
+            <link rel="stylesheet" href="Contact.css">
+
     </head>
-    <body>
-        <div id="header-placeholder"></div>
-        <div class="main-content">
-             asda
+<body>
+    <div id="header-placeholder"></div>
+    <div class="main-content">
+        <div class="contact-content">
+        <h1 class="contact-title">Contact Us</h1>
+        <div class="contact-subtitle">
+            Have questions about our custom LEGO sets? Want to place a special order or discuss a collaboration?<br>
+            We'd love to hear from you!
         </div>
-           
-        <div id="footer-placeholder"></div>
-        <script src="SPA.js"></script>
-    </body>
+        <div class="contact-row">
+            <div class="contact-info-box">
+                <h3>Get in Touch</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fa-regular fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            xayxua.contact@gmail.com
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong><br>
+                            84+ 962564665<br>
+                            Mon-Fri, 9am-5pm EST
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Location</strong><br>
+                            136 Xuân Thủy, Cầu Giấy, Hà Nội
+                        </div>
+                    </li>
+                </ul>
+                <hr style="margin:18px 0;">
+                <div><strong>Follow Us</strong></div>
+                <div class="contact-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-box">
+                <h3>Send Us a Message</h3>
+                <form class="contact-form" action="https://formspree.io/f/xyzpglag" method="POST">
+                    <div class="contact-form-row">
+                        <div>
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                    </div>
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="order">Order Inquiry</option>
+                        <option value="custom">Custom Request</option>
+                        <option value="collab">Collaboration</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Type your message here"></textarea>
+                    <button type="submit"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="faq-box">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <strong>Do you ship internationally?</strong>
+                <p>Yes, we ship to most countries worldwide. Shipping costs and delivery times vary by location.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Can I request a custom set design?</strong>
+                <p>Absolutely! We love creating custom designs. Contact us with your ideas, and we'll work with you to bring them to life.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Are your sets compatible with official LEGO bricks?</strong>
+                <p>Yes, all our sets use genuine LEGO elements and are 100% compatible with official LEGO products.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="SPA.js"></script>
+</body>
 </html>
