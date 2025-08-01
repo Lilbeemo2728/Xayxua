@@ -1,0 +1,36 @@
+
+
+
+.carting-content {
+    max-width: 700px;
+    margin: 80px auto 0 auto;
+    padding: 40px 24px;
+    background: #fffbe7;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    border: 4px solid #ffffff;
+    text-align: center;
+}
+
+.hero-cart-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+.cat-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 700px) {
+    .carting-content {
+        padding: 24px 4vw;
+        margin-top: 40px;
+    }
+    .hero-cart-title {
+        font-size: 1.3rem;
+    }
+}

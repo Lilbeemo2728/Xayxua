@@ -49,9 +49,9 @@ function renderProductDetail(product) {
             </div>
         </div>
         <div class="product-detail-icons">
-            <span>🚚 Fast Shipping</span>
+            <!--<span>🚚 Fast Shipping</span>
             <span>🛡️ Quality Guarantee</span>
-            <span>↩️ Easy Returns</span>
+            <span>↩️ Easy Returns</span>-->
         </div>
     `;
 

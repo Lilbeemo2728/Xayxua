@@ -1,0 +1,6 @@
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('font/DVN-PTSans-Regular-akflme.ttf') format('truetype'),
+       url('font/DVN-PTSans-Bold-pmfufb.ttf') format('truetype');
+}

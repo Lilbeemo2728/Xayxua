@@ -1,5 +1,11 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('font/DVN-PTSans-Regular-akflme.ttf') format('truetype'),
+       url('font/DVN-PTSans-Bold-pmfufb.ttf') format('truetype');
+}
+
 body {
-    font-family:  'PT Sans', Arial, sans-serif;
+    font-family:  'PT Sans','MyCustomFont',Arial, sans-serif;
     color: #222;
     margin: 0;
 }

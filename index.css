@@ -1,6 +1,6 @@
 /* --- Hero Section --- */
 .hero-section {
-    background: url('img/ChuBin.jpg') center/cover no-repeat;
+    background: url('Img/HERO\ PAGE@1.5222x.webp') center/cover no-repeat;
     min-height: 400px;
     margin: 0;
     display: flex;
@@ -63,11 +63,12 @@
     transform: translateY(-2px) scale(1.05);
 }
 .hero-button-learnmore button {
-    background: #0001;
+    background: rgba(0, 0, 0, 0.2);
     color: #222;
+    backdrop-filter: blur(8px);
 }
 .hero-button-learnmore button:hover {
-    background: #0001;
+    background: rgba(0, 0, 0, 0.4);
     color: #fff;
     transform: translateY(-2px) scale(1.05);
 }
@@ -97,11 +98,11 @@
     padding: 0 24px;
 }
 .featured-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 32px;
-    color: #222;
+    color: #ffcd09;
     letter-spacing: 1px;
 }
 .product-grid {
@@ -194,6 +195,7 @@
     padding: 36px 32px 32px 32px;
     text-align: center;
 }
+
 .about-title {
     font-size: 2rem;
     font-weight: 700;
@@ -233,10 +235,24 @@
     border-radius: 18px;
     text-align: center;
 }
+.home-button-title {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    justify-content: center;
+    border-radius: 50px;
+    display: block;
+    margin: 0 auto 22px auto;
+    padding: 0px 30px;
+}
 .discover-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #222;
+    color: #ffcd09;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: #000000;
+
     margin-bottom: 28px;
     letter-spacing: 1px;
 }
@@ -316,9 +332,9 @@
     text-align: center;
 }
 .explore-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #222;
+    color: #ffcd09;
     margin-bottom: 28px;
     letter-spacing: 1px;
 }

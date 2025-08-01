@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('font/DVN-PTSans-Regular-akflme.ttf') format('truetype'),
+       url('font/DVN-PTSans-Bold-pmfufb.ttf') format('truetype');
+}
+
 body {
                 margin: 0;
                 padding: 0;
@@ -87,7 +93,10 @@ body {
 
             body {
                 background-color: #00805d;
-                font-family: 'PT Sans', sans-serif;
+                font-family: 'PT Sans', 'MyCustomFont', sans-serif;
+                background-image: url('Img/VÂN\ WEB@1.5x.webp');
+                background-size: cover;
+                background-position: center;
             }
 
             /* Hide menu button on desktop */
