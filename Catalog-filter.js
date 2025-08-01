@@ -14,13 +14,13 @@ function renderCatalog(items) {
             <a href="product-detail.html?id=${item.id}" class="catalog-link">
                 <div class="catalog-item">
                     <img src="${item.images[0]}" alt="${item.title}">
-                    ${item.featured ? '<span class="featured-tag">FEATURED</span>' : ''}
+                    ${item.featured ? '<span class="featured-tag">Nổi bật</span>' : ''}
                     <h3>${item.title}</h3>
                     <div class="product-info">
-                        <span class="product-pieces">${item.pieces} pieces</span>
+                        <span class="product-pieces">${item.pieces} mảnh</span>
                         <span class="product-category">${item.category}</span>
                     </div>
-                    <span class="product-complex">Complexity: ${'★'.repeat(item.complexity)}${'☆'.repeat(5-item.complexity)}</span>
+                    <span class="product-complex">Độ khó: ${'★'.repeat(item.complexity)}${'☆'.repeat(5-item.complexity)}</span>
                     <span class="product-price">$${item.price.toFixed(2)}</span>
                 </div>
             </a>

@@ -162,7 +162,8 @@ body {
             padding: 40px 40px 32px 40px;
             width: 100%;
             max-width: 1000px; /* Wider than before */
-            margin: 0px auto ;   
+            margin: 0px auto ;  
+            margin-top: 90px; 
             box-sizing: border-box;
             width: 100%;
             border: #ffee00 6px solid;

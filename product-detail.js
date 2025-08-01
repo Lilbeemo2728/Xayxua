@@ -26,8 +26,8 @@ function renderProductDetail(product) {
                 <h1>${product.title}</h1>
                 <div>
                     <span class="product-category">${product.category}</span>
-                    <span class="product-complex">Complexity: ${'★'.repeat(product.complexity)}${'☆'.repeat(5-product.complexity)}</span>
-                    <span class="product-pieces">${product.pieces} pieces</span>
+                    <span class="product-complex">Độ khó: ${'★'.repeat(product.complexity)}${'☆'.repeat(5-product.complexity)}</span>
+                    <span class="product-pieces">${product.pieces} mảnh</span>
                 </div>
                 <div class="product-detail-price">$${product.price.toFixed(2)}</div>
                 <p>${product.description}</p>
@@ -39,20 +39,16 @@ function renderProductDetail(product) {
                 </div>
                 <div class="product-detail-actions">
                     <div class="qty-group">
-                        <label for="qtyInput">Quantity:</label>
+                        <label for="qtyInput">Số Lượng:</label>
                         <button type="button" id="qtyMinus" class="qty-btn">-</button>
                         <input type="number" id="qtyInput" value="1" min="1" style="width:40px;">
                         <button type="button" id="qtyPlus" class="qty-btn">+</button>
                     </div>
-                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-cart-btn">Chưa mở bán</button>
                 </div>
             </div>
         </div>
-        <div class="product-detail-icons">
-            <!--<span>🚚 Fast Shipping</span>
-            <span>🛡️ Quality Guarantee</span>
-            <span>↩️ Easy Returns</span>-->
-        </div>
+
     `;
 
     // Thumbnail click event
@@ -84,13 +80,13 @@ function renderRelatedProducts(currentId) {
         <a href="product-detail.html?id=${item.id}" class="catalog-link">
             <div class="catalog-item">
                 <img src="${item.images[0]}" alt="${item.title}">
-                ${item.featured ? '<span class="featured-tag">FEATURED</span>' : ''}
+                ${item.featured ? '<span class="featured-tag">Nổi bật</span>' : ''}
                 <h3>${item.title}</h3>
                 <div class="product-info">
-                    <span class="product-pieces">${item.pieces} pieces</span>
+                    <span class="product-pieces">${item.pieces} mảnh</span>
                     <span class="product-category">${item.category}</span>
                 </div>
-                <span class="product-complex">Complexity: ${'★'.repeat(item.complexity)}${'☆'.repeat(5-item.complexity)}</span>
+                <span class="product-complex">Độ khó: ${'★'.repeat(item.complexity)}${'☆'.repeat(5-item.complexity)}</span>
                 <span class="product-price">$${item.price.toFixed(2)}</span>
             </div>
         </a>

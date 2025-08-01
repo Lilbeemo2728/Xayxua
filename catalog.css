@@ -277,6 +277,7 @@
         flex-direction: column;
         gap: 24px;
         padding: 0 8vw;
+        margin-top: 20px;
     }
     .catalog-sidebar {
         margin-bottom: 18px;
@@ -288,6 +289,9 @@
     .catalog-main {
         padding-right: 0;
         padding-left: 0;
+    }
+    .catalog-grid {
+        margin-bottom: 20px;
     }
 }
 @media (max-width: 700px) {

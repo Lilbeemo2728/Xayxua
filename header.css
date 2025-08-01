@@ -7,6 +7,9 @@
 body {
                 margin: 0;
                 padding: 0;
+                
+                background-color: #00805d;
+                font-family: 'PT Sans', 'MyCustomFont', sans-serif;
             }
             .header {
                 display: flex;
@@ -91,13 +94,6 @@ body {
                 transition: all 0.1s ease;
             }
 
-            body {
-                background-color: #00805d;
-                font-family: 'PT Sans', 'MyCustomFont', sans-serif;
-                background-image: url('Img/VÂN\ WEB@1.5x.webp');
-                background-size: cover;
-                background-position: center;
-            }
 
             /* Hide menu button on desktop */
 .menu-toggle {
@@ -146,7 +142,11 @@ body {
 }
 .main-content {
     padding: 0px;
+    background-image: url('Img/VÂN\ WEB@1.5x.webp');
+                background-repeat: repeat; 
+                background-size: cover;
     display: inline-block;
+    
 }
 
 /* Responsive styles */
