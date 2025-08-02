@@ -32,7 +32,7 @@ function renderProductDetail(product) {
                 <div class="product-detail-price">$${product.price.toFixed(2)}</div>
                 <p>${product.description}</p>
                 <div class="product-detail-set">
-                    <h3>Set Details:</h3>
+                    <h3>Thông tin chi tiết:</h3>
                     <ul>
                         ${product.details.map(d => `<li>${d}</li>`).join('')}
                     </ul>
