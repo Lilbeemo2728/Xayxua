@@ -12,6 +12,9 @@
     box-sizing: border-box;
     position: relative;
 }
+.product-item img {
+    box-shadow: #222 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.5) 0px 2px 4px;
+}
 
 .hero-text-wrap,
 .hero-counter-wrap {
