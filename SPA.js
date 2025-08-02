@@ -29,18 +29,21 @@ function loadPage(url, addToHistory = true) {
 function attachNavEvents() {
     document.querySelectorAll('a[href$=".html"]').forEach(link => {
         const href = link.getAttribute('href');
-        // Only intercept if NOT Carting.html
-        if (href && href.endsWith('.html') && !href.includes('Carting.html')) {
+        if (!href) return;
+
+        // Nếu là Carting.html hoặc Contact.html thì không xử lý bằng SPA
+        if (href.includes('Carting.html') || href.includes('Contact.html')) {
+            link.onclick = null; // Cho phép trình duyệt xử lý bình thường (chuyển trang thật)
+        } else if (href.endsWith('.html')) {
+            // SPA loadPage cho các trang khác
             link.onclick = function(e) {
                 e.preventDefault();
                 loadPage(href);
             };
-        } else if (href && href.includes('Carting.html')) {
-            // Remove any previous SPA handler so it does a normal reload
-            link.onclick = null;
         }
     });
 }
+
 
 function enableMenuToggle() {
     const menuToggle = document.querySelector('.menu-toggle');

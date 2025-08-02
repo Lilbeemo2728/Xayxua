@@ -19,6 +19,15 @@
             <link rel="stylesheet" href="Contact.css">
         <link rel="stylesheet" href="About.css">
         <link rel="stylesheet" href="Carting.css">
+        <script>
+    // Kiểm tra nếu chưa từng refresh trong phiên này
+    if (!sessionStorage.getItem("refreshedOnce")) {
+      // Đánh dấu đã refresh
+      sessionStorage.setItem("refreshedOnce", "true");
+      // Reload lại trang
+      window.location.reload();
+    }
+  </script>
     </head>
 <body>
     <div id="header-placeholder"></div>
@@ -66,7 +75,7 @@
             </div>
             <div class="contact-form-box">
                 <h3>Gửi tin nhắn</h3>
-                <form class="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfaJ1IxniJ_StKWeCfRJGIGt79-tL9YUvIdr4JL9-ffj2FNNw/formResponse" method="POST">
+                <form class="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfaJ1IxniJ_StKWeCfRJGIGt79-tL9YUvIdr4JL9-ffj2FNNw/formResponse" method="POST" target="_blank">
                     <div class="contact-form-row">
                         <div>
                             <label for="name">Tên của bạn</label>
