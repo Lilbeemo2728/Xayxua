@@ -481,6 +481,24 @@
         background-position: -500px;
         background-size: 500%;
     }
+    .product-item {
+        min-height: 200px;
+    }
+    .discover-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.38) 0%,
+        rgba(0,0,0,0.18) 40%,
+        rgba(0,0,0,0.04) 75%,
+        rgba(0,0,0,0) 100%
+    );
+    z-index: 1;
+    border-radius: 14px;
+}
+    
     .discover-link {
         display: inline-block;
         align-items: center;
@@ -579,10 +597,7 @@
         min-width: 0;
         padding: 14px 6px 12px 6px;
     }
-    .product-item img {
-        width: 80px;
-        height: 80px;
-    }
+
     .featured-title,
     .discover-title,
     .explore-title,

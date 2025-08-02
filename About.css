@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family:  'PT Sans','MyCustomFont',Arial, sans-serif;
+    font-family:  'MyCustomFont','PT Sans',Arial, sans-serif;
     color: #222;
     margin: 0;
 }
@@ -213,6 +213,10 @@ body {
 }
 
 @media (max-width: 900px) {
+    .avatar-img-rect {
+        min-height:300px ;
+
+    }
     .aboutus-content {
         max-width: 98vw;
     }

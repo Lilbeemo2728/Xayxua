@@ -1,6 +1,6 @@
 body {
             margin: 0;
-            font-family:'PT Sans','MyCustomFont', Arial, sans-serif;
+            font-family:'MyCustomFont','PT Sans', Arial, sans-serif;
         }
         .contact-content {
             max-width: 1300px;

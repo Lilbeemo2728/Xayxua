@@ -4,6 +4,9 @@
 .carting-content {
     max-width: 700px;
     margin: 80px auto 0 auto;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 30px;
     padding: 40px 24px;
     background: #fffbe7;
     border-radius: 18px;

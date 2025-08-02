@@ -9,7 +9,7 @@ body {
                 padding: 0;
                 
                 background-color: #00805d;
-                font-family: 'PT Sans', 'MyCustomFont', sans-serif;
+                font-family:  'MyCustomFont','PT Sans', sans-serif;
             }
             .header {
                 display: flex;
