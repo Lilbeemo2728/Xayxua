@@ -32,7 +32,7 @@ function attachNavEvents() {
         if (!href) return;
 
         // Nếu là Carting.html hoặc Contact.html thì không xử lý bằng SPA
-        if (href.includes('Carting.html') || href.includes('Contact.html')) {
+        if (href.includes('Carting.html') || href.includes('Contact.html') || href.includes('blog.html')) {
             link.onclick = null; // Cho phép trình duyệt xử lý bình thường (chuyển trang thật)
         } else if (href.endsWith('.html')) {
             // SPA loadPage cho các trang khác

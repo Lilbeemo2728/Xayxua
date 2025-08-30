@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Xây Xưa</title>
+        <link rel="icon" href="Img/16kava no bg.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="catalog.css">
+        <link rel="stylesheet" href="product-detail.css">
+        <script src="Catalog-filter.js"></script>
+        <script src="catalog-data.js"></script>
+            <link rel="stylesheet" href="Contact.css">
+        <link rel="stylesheet" href="About.css">
+        <link rel="stylesheet" href="Carting.css">
+<style>
+.main-content { padding: 0px 0; }
+h1 { text-align: center; margin-bottom: 32px; }
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 0 12px;
+}
+
+.blog-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.18s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100px;
+}
+
+.blog-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.blog-thumb {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-card-body {
+  padding: 16px 18px 18px 18px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.blog-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.blog-card-body h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.18rem;
+  color: #1976d2;
+  font-weight: 700;
+}
+
+.blog-short {
+  color: #444;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center; 
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  max-width: 96vw;
+  width: 100%;
+  border-radius: 12px;
+  position: relative;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 20% 20%;
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 60px;      /* Make X bigger */
+  font-weight: bold;    /* Make X bolder */
+  cursor: pointer;
+  color: #1976d2;
+  z-index: 2;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 18px 0;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #000;
+}
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 14px;
+  background: #000;
+}
+.fb-post {
+  max-width: 100% !important;
+}
+.xayxuablog {
+color: rgb(255, 205, 9)
+}
+
+.blogimg img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  margin: 18px auto 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .blog-thumb { height: 120px; }
+  .modal-content { padding: 10px; }
+  .blog-card-body { padding: 10px 8px 12px 8px; }
+  .modal-content {
+    margin: 0 0;
+  }}
+  </style>
+</head>
+<body>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v21.0"></script>
+
+  <div id="header-placeholder"></div>
+<div class="main-content">
+  <h1 class="xayxuablog">XÂY XƯA BLOG</h1>
+  <div class="blog-container" id="blogContainer"></div>
+  <!-- Modal -->
+  <div class="modal" id="blogModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+</div>
+<div id="footer-placeholder"></div>
+        <script src="SPA.js"></script>
+
+<script>
+  const blogs = {
+  "1": {
+    title: "Cùng Xây Xưa biến mọi kỉ niệm thành mô hình LEGO!",
+    thumbnail: "https://i.ytimg.com/vi/C8S4OWgf7jw/hq720_2.jpg?sqp=-oaymwFBCNAFEJQDSFryq4qpAzMIARUAAIhCGADYAQHiAQoIGBACGAY4AUAB8AEB-AG2CIACgA-KAgwIABABGHIgUigyMA8=&rs=AOn4CLAATWJZkzbCbIYmjQ49WJOMI4kOsA",
+    short: "Chim của An",
+    preview: `<p></p>
+    <div class="video-wrapper">
+         <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/C8S4OWgf7jw" 
+    title="YouTube Shorts" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+  </iframe>
+      </div>`,
+    full: `
+      
+    `
+  },
+  "2": {
+    title: "TỔNG QUAN DỰ ÁN “XÂY XƯA”",
+    thumbnail: "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/526757551_122114402540947222_7914480482713920440_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG6baFpMe0y8dVGx_ghicM8jlkhngVe6W6OWSGeBV7pbiuzQ6iUTGDvEY1J9es8Xngxq7_ujl81gPFI25YMZYQQ&_nc_ohc=PZS-06xOpvkQ7kNvwHkqeVe&_nc_oc=AdnSFScWwzuvmycF2NyfftoPhr2wXiTkcYlJDr8WbOB8aBykZ8v_AogEE84UTpg1nbU&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Mst3rWBP-zVr6hINZnQpdw&oh=00_AfXieUDOO9-uYbY8IoPijeQd_uiKXPngaVSU2t8KSWZ-qA&oe=68B8F32E",
+    short: "Xây Xưa là dự án phi lợi nhuận thành lập bởi một nhóm học sinh trường THPT Chuyên Đại học Sư phạm",
+    preview:`<p>📣 GIỚI THIỆU CHUNG <br>
+Xây Xưa là dự án phi lợi nhuận thành lập bởi một nhóm học sinh trường THPT Chuyên Đại học Sư phạm với mục đích khơi dậy niềm đam mê LEGO và chia sẻ kinh nghiệm về bộ môn lắp ráp tới cộng đồng. Ngoài ra, với mong muốn gây quỹ bảo tồn những công trình độc đáo tại Hà Nội, Xây Xưa thiết kế và dự định mở bán các sản phẩm lắp ráp lấy cảm hứng từ chính những địa điểm này.
+<br></p><a href="https://www.facebook.com/photo?fbid=122114402528947222&set=a.122109916316947222" target="_blank" class=blogimg>
+        <img src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/526757551_122114402540947222_7914480482713920440_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG6baFpMe0y8dVGx_ghicM8jlkhngVe6W6OWSGeBV7pbiuzQ6iUTGDvEY1J9es8Xngxq7_ujl81gPFI25YMZYQQ&_nc_ohc=PZS-06xOpvkQ7kNvwHkqeVe&_nc_oc=AdnSFScWwzuvmycF2NyfftoPhr2wXiTkcYlJDr8WbOB8aBykZ8v_AogEE84UTpg1nbU&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Mst3rWBP-zVr6hINZnQpdw&oh=00_AfXieUDOO9-uYbY8IoPijeQd_uiKXPngaVSU2t8KSWZ-qA&oe=68B8F32E" alt="Video Thumbnail">
+      </a>`,
+    full: `
+      <p>
+💡 CẢM HỨNG<br>
+Xây Xưa là đứa con tinh thần của chúng mình – những người lớn lên cùng niềm say mê với những viên gạch LEGO nhỏ bé. Với chúng mình, đây không đơn thuần là một sở thích, mà còn là thế giới nơi trí tưởng tượng được bay xa, nơi mọi sự sáng tạo được phô diễn không giới hạn. Đặc biệt, những viên gạch tưởng chừng vô tri ấy lại trở thành “chất keo” gắn kết các thành viên trong gia đình, là cách để mỗi người lưu giữ những ký ức đáng nhớ trong cuộc đời.
+Chính vì vậy, Xây Xưa ra đời với mong muốn lan tỏa đam mê LEGO đến với ngày càng nhiều người, để ai cũng thấy rằng, không có bất kì ranh giới tuổi tác hay trình độ trong thế giới LEGO. Mỗi viên gạch đều có thể trở thành mảnh ghép cho một điều gì đó lớn lao hơn – một niềm vui, một sự kết nối, hay một giấc mơ từ thuở nhỏ.
+<br>
+📍 HOẠT ĐỘNG<br>
+- Hoạt động 1: Chia sẻ kinh nghiệm, trải nghiệm về LEGO dưới dạng các bài đăng.<br>
+- Hoạt động 2: Tổ chức cuộc thi sáng tạo MOC (My Own Creation) và giới thiệu ý tưởng xây dựng các mô hình lắp ráp lấy cảm hứng từ những công trình độc đáo tại Hà Nội.
+<br>
+🌐 THEO DÕI XÂY XƯA<br>
+- Website Xây Xưa: xayxua.com<br>
+- Tài khoản Instagram @xay.xua: instagram.com/xay.xua<br>
+- Tài khoản Youtube Xây Xưa: youtube.com/@XâyXưa-p1r<br>
+
+Xây Xưa đã đến với ngọn lửa cháy bỏng cho bộ môn LEGO. Còn bạn, liệu bạn đã sẵn sàng viết nên câu chuyện to lớn của riêng mình từ những viên gạch nhỏ bé?
+<br>_________________________<br>
+Thông tin liên hệ:<br>
+- Email: xayxua.contact@gmail.com<br>
+- Website: xayxua.com<br>
+- Instagram: @xay.xua<br>
+- Youtube: Xây Xưa<br>
+- SĐT: 0936 155 258 (Chu Quang Huy)</p>
+      
+    `
+  },
+  "4": {
+    title: "LEGO - NHỮNG VIÊN GẠCH GẮN KẾT GIA ĐÌNH",
+    thumbnail: "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/530499977_122117913194947222_808392436431168798_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGtCILI_QjaxYDAcrW1IHWzP-TPa0RU7uI_5M9rRFTu4nfNZ4IyW3Poo_6f1NlwaVIAUPOvE2XIq5ffz_FOgJMX&_nc_ohc=pSQHwTPyabYQ7kNvwGpjqTf&_nc_oc=AdmsbjQ2pK4Ej4N6ji7Eze0fDvhkf7kxRhjbl9iuleyQwd7nif8ZAfmyyKHyUcUAkv8&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=WIHNKDvU7oGNjtyksoACpA&oh=00_AfXD-TrYi81hUQutq1KyhEq-RAnK89eHkLG4GxirlPIMKg&oe=68B8E771",
+    short: "Với Xây Xưa, LEGO không chỉ là một sở thích...",
+    preview: `<p>Với Xây Xưa, LEGO không chỉ là một sở thích. Những viên gạch tưởng chừng vô tri ấy lại trở thành “chất keo” gắn kết gia đình khi mỗi thành viên cùng quây quần để tạo nên một mô hình nhỏ bé nhưng chứa chan bao tình cảm. Trong những giờ phút ấy, không còn khoảng cách thế hệ, không còn những bộn bề công việc hay học hành, mà chỉ có tiếng cười, những bàn tay cùng tìm kiếm một viên gạch vừa khít, và niềm vui ngất ngây khi mô hình hoàn thiện.</p><a href="https://www.facebook.com/xayxua/posts/pfbid02ZXu4qiBSdctz74UQC8wdsLQyVz4umwNBStRWGuCz3GmnUSbAXxzYUirua5SZZ8T3l" target="_blank" class=blogimg>
+          <img src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/540282871_122132735234844671_5444132758430628135_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGIKW6-DAYRnGRjtA_N-BXLj9EMHnar1DKP0QwedqvUMg3Q04uu9YPf8XjYtklPvzyKm3fW6Jm11WfGhdFYi8F8&_nc_ohc=IzMMK5CDCNQQ7kNvwERDv0V&_nc_oc=Adn8SK4NkM7D4kHK4c-FHMi1hiST0nsLDd5skcvdLhVySzArMck8TmBMSlFS7NIXSsE&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=h-bVFMor_RiZ1Q0kj3n2Tg&oh=00_AfVli_ymetKh5vPp3wQ9e4vqjj2Dveo9QwdMM9m9n8Y2bA&oe=68B8EB14" alt="Screenshot-2025-08-30-223721" border="0">
+          </a>`,
+    full: `_________________________<br>
+Thông tin liên hệ:<br>
+- Email: xayxua.contact@gmail.com<br>
+- Website: xayxua.com<br>
+- Instagram: @xay.xua<br>
+- Youtube: Xây Xưa<br>
+- SĐT: 0936 155 258 (Chu Quang Huy)<br>
+    
+        
+    `
+  },
+  "3": {
+    title: "XÂY XƯA TUTORIAL #1",
+    thumbnail: "https://scontent.xx.fbcdn.net/v/t15.5256-10/530769874_4252509874998099_7828465536065072074_n.jpg?stp=dst-jpg_s851x315_tt6&_nc_cat=107&ccb=1-7&_nc_sid=442ec5&_nc_ohc=7ji2dmDGFAgQ7kNvwH4IwDA&_nc_oc=AdmzcWvSf0jSnoLKjcvReiJlyHbi-_iqkafIVHasVA5ATSA55JfZrFxMi7nrcajPgVI&_nc_zt=23&_nc_ht=scontent.xx&edm=AGo2L-IEAAAA&_nc_gid=oCec0HHFK33nv0G3Wlgdjg&oh=00_AfVC_9GeW9S265IyNp5Zxd-pnomy3ttjjXFkhW9xnLBYgw&oe=68B8D647",
+    short: "HACKING” BRICKLINK",
+    preview: `<p>“HACKING” BRICKLINK</p><div class="video-wrapper">
+        <iframe width="560" height="315" 
+          src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fxayxua%2Fvideos%2F1763688934255939%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"
+          title="YouTube video player" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>`,
+    full: `
+    Thiếu gạch? Thiếu màu? Thiếu ý tưởng trong đầu và chẳng biết bắt đầu từ đâu? <br>
+Đừng lo, Studio BrickLink - một ứng dụng siêu hữu ích và quen thuộc với mọi “con dân” LEGO - đã đến và giải cứu bạn!<br>
+Trong tập đầu tiên của Xây Xưa Tutorial, chúng mình sẽ cùng bạn khai phá mọi ngóc ngách của Studio BrickLink. Từ bước đầu làm quen đến những mẹo vặt siêu hay, siêu “nổ não”, tất cả sẽ được bật mí trong chỉ 5 phút tiếp theo! Chần chừ gì nữa, cùng Xây Xưa đắm chìm vào thế giới LEGO tại Studio BrickLink ngay thôi nào!
+<br>_________________________<br>
+Thông tin liên hệ:<br>
+- Email: xayxua.contact@gmail.com<br>
+- Website: xayxua.com<br>
+- Instagram: @xay.xua<br>
+- Youtube: Xây Xưa<br>
+- SĐT: 0936 155 258 (Chu Quang Huy)
+      
+    `
+  },
+};
+
+  // Render blog cards dynamically
+const blogContainer = document.getElementById("blogContainer");
+blogContainer.innerHTML = Object.entries(blogs).map(([id, blog]) => `
+  <div class="blog-card" onclick="openModal('${id}')">
+    <img class="blog-thumb" src="${blog.thumbnail}" alt="Thumbnail ${blog.title}">
+    <div class="blog-card-body">
+      <h3>${blog.title}</h3>
+      <p class="blog-short">${blog.short}</p>
+    </div>
+  </div>
+`).join('');
+
+function openModal(id) {
+  const blog = blogs[id];
+  document.getElementById("modalBody").innerHTML = `
+    <h2>${blog.title}</h2>
+    <div id="blogPreview">${blog.preview}</div>
+    <div id="blogFull" style="display:none">${blog.full}</div>
+    <button id="toggleMoreBtn" class="add-to-cart-btn" style="margin:18px auto 0 auto;display:block;">Xem thêm</button>
+  `;
+  document.getElementById("blogModal").style.display = "flex";
+
+  // Toggle show more/less
+  const btn = document.getElementById("toggleMoreBtn");
+  const full = document.getElementById("blogFull");
+  btn.onclick = function() {
+    if (full.style.display === "none") {
+      full.style.display = "block";
+      btn.textContent = "Thu gọn";
+    } else {
+      full.style.display = "none";
+      btn.textContent = "Xem thêm";
+    }
+    // Re-parse Facebook plugins if FB SDK is loaded
+    if (window.FB && typeof FB.XFBML.parse === "function") {
+      FB.XFBML.parse(full);
+    }
+  };
+
+  // Re-parse Facebook plugins if FB SDK is loaded (for preview)
+  if (window.FB && typeof FB.XFBML.parse === "function") {
+    FB.XFBML.parse(document.getElementById("modalBody"));
+  }
+}
+
+function closeModal() {
+  document.getElementById("blogModal").style.display = "none";
+}
+
+// Close modal when clicking outside modal-content
+document.getElementById("blogModal").addEventListener("click", function(e) {
+  if (e.target === this) {
+    closeModal();
+  }
+});
+</script>
+
+</body>
+</html> 
