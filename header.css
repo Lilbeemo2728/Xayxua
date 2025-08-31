@@ -42,6 +42,24 @@ body {
                 will-change: transform;
                 
             }
+            .moc-button {
+                background-color: rgb(255, 205, 9);
+                color: rgb(0, 0, 0);
+                border: 0 solid #6411ff;
+                padding: 15px 30px;
+                border-radius: 50px;
+                font-size: 16px;
+                cursor: pointer;
+                margin-right: 20px;
+                transition: all 0.3s ease;
+                backface-visibility: hidden;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-weight: 550;
+                will-change: transform;
+                
+            }
+            
             .middle-section {
                 display: flex;
                 align-items: center;
@@ -77,6 +95,12 @@ body {
             .Contact-button:hover {
                 background-color: #ff3a89;
                 box-shadow: 0 4px 20px rgba(136, 136, 136, 0.4);
+                transform: scale(1.05);
+            }
+            .moc-button:hover {
+                background-color: #ff7809;
+                box-shadow: 0 4px 20px rgba(136, 136, 136, 0.4); 
+                color: rgb(224, 224, 224);
                 transform: scale(1.05);
             }
             .Home-button:active,
@@ -192,6 +216,7 @@ body {
         box-shadow: 0 4px 20px rgba(0,0,0,0.10);
         display: none;
         border-radius: 0 0 12px 12px;
+        padding-bottom: 20px;
     }
     .nav-links.show {
         display: flex;
