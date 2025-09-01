@@ -57,7 +57,8 @@ body {
                 -moz-osx-font-smoothing: grayscale;
                 font-weight: 550;
                 will-change: transform;
-                
+                justify-content: center;
+
             }
             
             .middle-section {
@@ -109,6 +110,11 @@ body {
             .About-button:active,
             .Contact-button:active {
                 background-color: #de0058;
+                color: #222;
+                transition: all 0.1s ease;
+            }
+            .moc-button:active {
+                background-color: #ffd0a9;
                 color: #222;
                 transition: all 0.1s ease;
             }
@@ -229,7 +235,7 @@ body {
         /* Keeps it at the right edge with padding */
     }
     .Home-button, .Catalog-button, .FAQ-button,
-    .About-button, .Contact-button {
+    .About-button, .Contact-button .moc-button {
         display: block;
         width: 100%;
         max-width: none;
