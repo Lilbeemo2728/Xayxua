@@ -71,7 +71,6 @@ function clearAllFilters() {
     filterCatalog();
 }
 
-// Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('catalogGrid')) {
         attachCatalogEvents();

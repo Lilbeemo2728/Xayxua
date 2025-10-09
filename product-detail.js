@@ -1,5 +1,3 @@
-// Example product data
-
 
 function getProductId() {
     const params = new URLSearchParams(window.location.search);
@@ -50,8 +48,6 @@ function renderProductDetail(product) {
         </div>
 
     `;
-
-    // Thumbnail click event
     const mainImg = document.getElementById('mainProductImg');
     document.querySelectorAll('.product-detail-thumb').forEach(thumb => {
         thumb.addEventListener('click', function() {
@@ -60,8 +56,6 @@ function renderProductDetail(product) {
             this.classList.add('selected');
         });
     });
-
-    // Quantity + and - functionality
     const qtyInput = document.getElementById('qtyInput');
     document.getElementById('qtyMinus').addEventListener('click', function() {
         let val = parseInt(qtyInput.value, 10);

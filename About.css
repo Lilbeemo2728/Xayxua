@@ -180,7 +180,7 @@ body {
     font-size: 1rem;
 }
 
-/* For the vision card layout */
+
 .about-card.about-vision {
     display: flex;
     flex-direction: row;
@@ -195,13 +195,12 @@ body {
     gap: 32px;
 }
 
-/* Content on the left */
+
 .about-vision-content {
     flex: 1 1 0;
     min-width: 0;
 }
 
-/* Rectangle avatar on the right */
 .avatar-img-rect {
     width: 160px;
     height: 200px;

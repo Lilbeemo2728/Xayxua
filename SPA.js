@@ -11,14 +11,11 @@ function loadPage(url, addToHistory = true) {
                     history.pushState(null, '', url);
                 }
                 attachNavEvents();
-
-                // If this is the catalog page, initialize catalog
                 if (url.includes('Catalog.html')) {
                     attachCatalogEvents();
                     filterCatalog();
                 }
 
-                // --- ADD THIS BLOCK ---
                 if (url.includes('Carting.html') && typeof attachCatEvents === 'function') {
                     setTimeout(attachCatEvents, 0);
                 }
@@ -31,11 +28,9 @@ function attachNavEvents() {
         const href = link.getAttribute('href');
         if (!href) return;
 
-        // Nếu là Carting.html hoặc Contact.html thì không xử lý bằng SPA
         if (href.includes('Carting.html') || href.includes('Contact.html') || href.includes('blog.html') || href.includes('moc.html')) {
-            link.onclick = null; // Cho phép trình duyệt xử lý bình thường (chuyển trang thật)
+            link.onclick = null; 
         } else if (href.endsWith('.html')) {
-            // SPA loadPage cho các trang khác
             link.onclick = function(e) {
                 e.preventDefault();
                 loadPage(href);
@@ -83,13 +78,13 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('popstate', () => {
-    const path = location.pathname.split('/').pop(); // lấy tên file
+    const path = location.pathname.split('/').pop();
     loadPage(path || 'index.html', false);
 });
 
 function tryAttachCatEvents() {
     if (location.pathname.endsWith('Carting.html') && typeof attachCatEvents === 'function') {
-        // Wait for DOM to update
+      
         setTimeout(attachCatEvents, 0);
     }
 }
