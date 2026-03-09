@@ -17,6 +17,8 @@
             <link rel="stylesheet" href="Contact.css">
         <link rel="stylesheet" href="About.css">
         <link rel="stylesheet" href="Carting.css">
+        <script src="translations.js"></script>
+        <script src="language-switcher.js"></script>
 <style>
 .main-content
 h1 { text-align: center; margin-bottom: 32px; }
@@ -174,7 +176,7 @@ color: rgb(255, 205, 9)
 
   <div id="header-placeholder"></div>
 <div class="main-content">
-  <h1 class="xayxuablog">XÂY XƯA BLOG</h1>
+  <h1 class="xayxuablog" data-i18n="blog.title">XÂY XƯA BLOG</h1>
   <div class="blog-container" id="blogContainer"></div>
   <!-- Modal -->
   <div class="modal" id="blogModal">
@@ -596,7 +598,7 @@ function openModal(id) {
     <h2>${blog.title}</h2>
     <div id="blogPreview">${blog.preview}</div>
     <div id="blogFull" style="display:none">${blog.full}</div>
-    <button id="toggleMoreBtn" class="add-to-cart-btn" style="margin:18px auto 0 auto;display:block;">Xem thêm</button>
+    <button id="toggleMoreBtn" class="add-to-cart-btn" style="margin:18px auto 0 auto;display:block;" data-i18n="blog.readmore">${window.xayxuaI18n ? window.xayxuaI18n.t('blog.readmore') : 'Xem thêm'}</button>
   `;
   document.getElementById("blogModal").style.display = "flex";
 
@@ -605,10 +607,10 @@ function openModal(id) {
   btn.onclick = function() {
     if (full.style.display === "none") {
       full.style.display = "block";
-      btn.textContent = "Thu gọn";
+      btn.textContent = window.xayxuaI18n ? window.xayxuaI18n.t('blog.collapse') : "Thu gọn";
     } else {
       full.style.display = "none";
-      btn.textContent = "Xem thêm";
+      btn.textContent = window.xayxuaI18n ? window.xayxuaI18n.t('blog.readmore') : "Xem thêm";
     }
 
     if (window.FB && typeof FB.XFBML.parse === "function") {

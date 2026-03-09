@@ -4,45 +4,58 @@ function getProductId() {
     return parseInt(params.get('id'), 10);
 }
 
+function _t(key) {
+    if (window.xayxuaI18n) return window.xayxuaI18n.t(key);
+    return key;
+}
+
 function renderProductDetail(product) {
     const container = document.getElementById('productDetail');
     if (!product) {
-        container.innerHTML = "<h2>Product not found.</h2>";
+        container.innerHTML = "<h2>" + _t('product.notfound') + "</h2>";
         return;
     }
+    var p = (typeof getCatalogItemTranslated === 'function') ? getCatalogItemTranslated(product) : product;
+    var difficultyLabel = _t('product.difficulty');
+    var piecesLabel = _t('product.pieces');
+    var detailsLabel = _t('product.details');
+    var qtyLabel = _t('product.qty');
+    var notForSale = _t('product.notforsale');
+    var featuredTag = _t('featured.tag');
+
     container.innerHTML = `
         <div class="product-detail-layout">
             <div class="product-detail-image">
-                <img id="mainProductImg" src="${product.images[0]}" alt="${product.title}">
+                <img id="mainProductImg" src="${p.images[0]}" alt="${p.title}">
                 <div class="product-detail-thumbs">
-                    ${product.images.map((img, idx) => `
-                        <img src="${img}" class="product-detail-thumb${idx === 0 ? ' selected' : ''}" data-idx="${idx}" alt="${product.title} view ${idx+1}">
+                    ${p.images.map((img, idx) => `
+                        <img src="${img}" class="product-detail-thumb${idx === 0 ? ' selected' : ''}" data-idx="${idx}" alt="${p.title} view ${idx+1}">
                     `).join('')}
                 </div>
             </div>
             <div class="product-detail-info">
-                <h1>${product.title}</h1>
+                <h1>${p.title}</h1>
                 <div>
-                    <span class="product-category">${product.category}</span>
-                    <span class="product-complex">Độ khó: ${'★'.repeat(product.complexity)}${'☆'.repeat(5-product.complexity)}</span>
-                    <span class="product-pieces">${product.pieces} mảnh</span>
+                    <span class="product-category">${p.category}</span>
+                    <span class="product-complex">${difficultyLabel}: ${'★'.repeat(p.complexity)}${'☆'.repeat(5-p.complexity)}</span>
+                    <span class="product-pieces">${p.pieces} ${piecesLabel}</span>
                 </div>
-                <div class="product-detail-price">$${product.price.toFixed(2)}</div>
-                <p>${product.description}</p>
+                <div class="product-detail-price">$${p.price.toFixed(2)}</div>
+                <p>${p.description}</p>
                 <div class="product-detail-set">
-                    <h3>Thông tin chi tiết:</h3>
+                    <h3>${detailsLabel}</h3>
                     <ul>
-                        ${product.details.map(d => `<li>${d}</li>`).join('')}
+                        ${p.details.map(d => `<li>${d}</li>`).join('')}
                     </ul>
                 </div>
                 <div class="product-detail-actions">
                     <div class="qty-group">
-                        <label for="qtyInput">Số Lượng:</label>
+                        <label for="qtyInput">${qtyLabel}</label>
                         <button type="button" id="qtyMinus" class="qty-btn">-</button>
                         <input type="number" id="qtyInput" value="1" min="1" style="width:40px;">
                         <button type="button" id="qtyPlus" class="qty-btn">+</button>
                     </div>
-                    <button class="add-to-cart-btn">Chưa mở bán</button>
+                    <button class="add-to-cart-btn">${notForSale}</button>
                 </div>
             </div>
         </div>
@@ -70,21 +83,27 @@ function renderProductDetail(product) {
 function renderRelatedProducts(currentId) {
     const relatedContainer = document.getElementById('relatedProducts');
     const related = catalogItems.filter(p => p.id !== currentId).slice(0, 3);
-    relatedContainer.innerHTML = related.map(item => `
-        <a href="product-detail.html?id=${item.id}" class="catalog-link">
+    var difficultyLabel = _t('product.difficulty');
+    var piecesLabel = _t('product.pieces');
+    var featuredTag = _t('featured.tag');
+
+    relatedContainer.innerHTML = related.map(item => {
+        var p = (typeof getCatalogItemTranslated === 'function') ? getCatalogItemTranslated(item) : item;
+        return `
+        <a href="product-detail.html?id=${p.id}" class="catalog-link">
             <div class="catalog-item">
-                <img src="${item.images[0]}" alt="${item.title}">
-                ${item.featured ? '<span class="featured-tag">Nổi bật</span>' : ''}
-                <h3>${item.title}</h3>
+                <img src="${p.images[0]}" alt="${p.title}">
+                ${p.featured ? '<span class="featured-tag">' + featuredTag + '</span>' : ''}
+                <h3>${p.title}</h3>
                 <div class="product-info">
-                    <span class="product-pieces">${item.pieces} mảnh</span>
-                    <span class="product-category">${item.category}</span>
+                    <span class="product-pieces">${p.pieces} ${piecesLabel}</span>
+                    <span class="product-category">${p.category}</span>
                 </div>
-                <span class="product-complex">Độ khó: ${'★'.repeat(item.complexity)}${'☆'.repeat(5-item.complexity)}</span>
-                <span class="product-price">$${item.price.toFixed(2)}</span>
+                <span class="product-complex">${difficultyLabel}: ${'★'.repeat(p.complexity)}${'☆'.repeat(5-p.complexity)}</span>
+                <span class="product-price">$${p.price.toFixed(2)}</span>
             </div>
         </a>
-    `).join('');
+    `}).join('');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
