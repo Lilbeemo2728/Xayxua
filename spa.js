@@ -60,10 +60,15 @@ function loadHTML(selector, url, callback) {
         .then(response => response.text())
         .then(data => {
             document.querySelector(selector).innerHTML = data;
+
+            
+            if (window.xayxuaI18n) {
+                window.xayxuaI18n.applyTranslations();
+            }
+
             if (callback) callback();
         });
 }
-
 window.addEventListener('DOMContentLoaded', function() {
     let loaded = 0;
     function checkAllLoaded() {
