@@ -20,7 +20,7 @@ pinned_version = "1"
   [plugins.inputs]
 
 [build]
-publish = "/opt/build/repo"
+publish = "."
 publishOrigin = "default"
 
   [build.environment]
