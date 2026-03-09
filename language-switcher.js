@@ -1,6 +1,6 @@
 // Language Switcher - translates all elements with data-i18n attributes
 (function() {
-  const DEFAULT_LANG = 'vi';
+  const DEFAULT_LANG = 'en';
 
   function getCurrentLang() {
     return localStorage.getItem('xayxua-lang') || DEFAULT_LANG;
