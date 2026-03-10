@@ -13,11 +13,12 @@ function renderCatalog(items) {
     var featuredTag = _ct('featured.tag');
 
     if (items.length === 0) {
-        grid.innerHTML = `<div class="no-products">
-            <h2>No Products Found</h2>
-            <p>We couldn't find any products matching your current filters.</p>
-            <button class="clear-filters-btn" onclick="clearAllFilters()">Clear Filters</button>
+        grid.innerHTML = `<div class="no-products" >
+            <h2 data-i18n="no.products.found">No Products Found</h2>
+            <p data-i18n="no.products.matching">We couldn't find any products matching your current filters.</p>
+            <button class="clear-filters-btn" onclick="clearAllFilters()" data-i18n="clear.filters">Clear Filters</button>
         </div>`;
+        if (window.xayxuaI18n) window.xayxuaI18n.applyTranslations(grid);
     } else {
         grid.innerHTML = items.map(item => {
             var p = (typeof getCatalogItemTranslated === 'function') ? getCatalogItemTranslated(item) : item;
