@@ -1,5 +1,9 @@
 const translations = {
   vi: {
+    //Filter not found
+    "no.products.found": "Không tìm thấy sản phẩm.",
+    "no.products.matching": "Chúng tôi không thể tìm thấy sản phẩm nào phù hợp với bộ lọc hiện tại của bạn.",
+    "clear.filters": "Xóa bộ lọc",
     // Header
     "nav.home": "TRANG CHỦ",
     "nav.catalog": "DANH MỤC",
@@ -232,6 +236,11 @@ Với mình, Xây Xưa không nhằm phục dựng lại một Hà Nội hoàn c
     "lang.label": "Ngôn ngữ"
   },
   en: {
+    //Filter not found
+    "no.products.found": "No products found.",
+    "no.products.matching": "We couldn't find any products matching your current filters.",
+    "clear.filters": "Clear filters",
+
     // Header
     "nav.home": "HOME",
     "nav.catalog": "CATALOG",
@@ -448,6 +457,10 @@ On my 5th birthday, I was lucky enough to receive a small LEGO set. This was als
     "lang.label": "Language"
   },
   cn: {
+    //Filter not found
+    "no.products.found": "未找到产品。",
+    "no.products.matching": "我们无法找到与您当前过滤条件匹配的任何产品。",
+    "clear.filters": "清除过滤器",
     // header
     "nav.home": "主页",
     "nav.catalog": "目录",
