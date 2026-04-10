@@ -101,12 +101,12 @@ const translations = {
     // About Page
     "about.story.title": "Câu chuyện của chúng mình",
     "about.general.title": "GIỚI THIỆU CHUNG",
-    "about.general.text": "Xây Xưa là dự án phi lợi nhuận thành lập bởi nhóm học sinh trường THPT Chuyên Đại học Sư phạm với mục đích khơi dậy niềm đam mê LEGO và chia sẻ kinh nghiệm về bộ môn lắp ráp cho cộng đồng. Dự án hướng tới việc khơi dậy niềm đam mê với LEGO và chia sẻ kiến thức, kinh nghiệm lắp ráp sáng tạo cho cộng đồng. Bên cạnh đó, với mong muốn đóng góp cho xã hội, Xây Xưa thiết kế và dự định mở bán các sản phẩm lấy cảm hứng từ những địa điểm và công trình đặc trưng tại Hà Nội nhằm gây quỹ hỗ trợ trẻ em vùng cao và người già neo đơn.",
+    "about.general.text": "Xây Xưa là dự án phi lợi nhuận thành lập bởi nhóm học sinh trường THPT Chuyên Đại học Sư phạm với mục đích khơi dậy niềm đam mê LEGO và chia sẻ kinh nghiệm về bộ môn lắp ráp cho cộng đồng. Ngoài ra, với mong muốn gây quỹ bảo tồn những công trình độc đáo tại Hà Nội, Xây Xưa thiết kế và dự định mở bán các sản phẩm lấy cảm hứng từ chính những địa điểm này.",
     "about.inspiration.title": "Cảm hứng",
     "about.inspiration.text": "Xây Xưa là đứa con tinh thần của chúng mình – những người lớn lên cùng niềm say mê với những viên gạch LEGO nhỏ bé. Với chúng mình, đây không đơn thuần là một sở thích, mà còn là thế giới nơi trí tưởng tượng được bay xa, nơi mọi sự sáng tạo được phô diễn không giới hạn. Đặc biệt, những viên gạch tưởng chừng vô tri ấy lại trở thành “chất keo” gắn kết các thành viên trong gia đình, là cách để mỗi người lưu giữ những ký ức đáng nhớ trong cuộc đời. Chính vì vậy, Xây Xưa ra đời với mong muốn lan tỏa đam mê LEGO đến với ngày càng nhiều người, để ai cũng thấy rằng, không có bất kì ranh giới tuổi tác hay trình độ trong thế giới LEGO. Mỗi viên gạch đều có thể trở thành mảnh ghép cho một điều gì",
     "about.activities.title": "HOẠT ĐỘNG",
     "about.activities.text": "Hoạt động 1: Chia sẻ kinh nghiệm, trải nghiệm với LEGO dưới dạng các bài đăng.<br> Hoạt động 2: Tổ chức cuộc thi sáng tạo MOC (My Own Creation) và giới thiệu ý tưởng xây dựng các mô hình LEGO lấy cảm hứng từ những công trình độc đáo tại Hà Nội.",
-    "about.follow.title": "THEO DÕI XÂY XƯA:",
+    "about.follow.title": "THEO DÕI XÂY XƯA:", 
     "about.follow.text": `- Page Facebook Xây Xưa: <a href="https://www.facebook.com/people/X%C3%A2y-X%C6%B0a/61578416684861/#" target="_blank"><i class="fab fa-facebook-f" ></i></a> <br>
 - Kênh YouTube Xây Xưa: <a href="https://www.youtube.com/@X%C3%A2yX%C6%B0a-p1r" target="_blank"><i class="fab fa-youtube"></i></a> <br>
 - Tài khoản Instagram <a href="https://www.instagram.com/xay.xua/" target="_blank"><i class="fab fa-instagram"></i></a> <br>
@@ -338,7 +338,7 @@ Với mình, Xây Xưa không nhằm phục dựng lại một Hà Nội hoàn c
     // About Page
     "about.story.title": "Our Story",
     "about.general.title": "GENERAL INTRODUCTION",
-    "about.general.text": "Xây Xưa is a non-profit project founded by a group of students from the High School for Gifted Students, Hanoi University of Education, with the goal of igniting passion for LEGO and sharing building experience with the community. Additionally, with the desire to contribute to society, Xây Xưa designs and plans to sell products inspired by unique locations and landmarks in Hanoi to raise funds supporting children in highland areas and lonely elderly people.",
+    "about.general.text": "Xây Xưa is a non-profit project founded by a group of students from the High School for Gifted Students, Hanoi National University of Education. Its mission is to inspire a passion for LEGO and share building experiences with the community. In addition, with the goal of raising funds to preserve unique architectural sites in Hanoi, Xây Xưa designs and plans to sell products inspired by these very locations.",
     "about.inspiration.title": "Inspiration",
     "about.inspiration.text": "Xây Xưa is our brainchild – those of us who grew up with a passion for those tiny LEGO bricks. For us, it's not just a hobby, but a world where imagination can soar, where all creativity is showcased without limits. Especially, those seemingly inanimate bricks have become the “glue” that connects family members, a way for each person to preserve memorable memories in life. Therefore, Xây Xưa was born with the desire to spread the passion for LEGO to more and more people, so that everyone can see that there are no age or skill boundaries in the world of LEGO. Every brick can become a piece of something bigger.",
     "about.activities.title": "Activities",
@@ -560,7 +560,7 @@ On my 5th birthday, I was lucky enough to receive a small LEGO set. This was als
     // About Page
     "about.story.title": "我们的故事",
     "about.general.title": "一般介绍",
-    "about.general.text": "Xây Xưa是由河内师范大学附属中学的一群学生创立的非营利项目，旨在激发对LEGO的热情并与社区分享建造经验。此外，出于对社会的贡献愿望，Xây Xưa设计并计划销售受河内独特地点和地标启发的产品，以筹集资金支持高地儿童和孤寡老人。",
+    "about.general.text": "Xây Xưa 是一个由河内师范大学附属重点高中学生创立的非营利项目，旨在激发人们对乐高的热情，并与社区分享拼搭经验 .此外，为了筹集资金以保护河内的独特建筑遗产，Xây Xưa 设计并计划推出以这些地点为灵感的产品。",
     "about.inspiration.title": "灵感来源",
     "about.inspiration.text": "Xây Xưa是我们这些从小就热爱那些小小LEGO砖块的人共同孕育的产物。对我们来说，这不仅仅是一种爱好，而是一个想象力可以飞翔的世界，一个展示所有创造力的世界，毫无限制。尤其是那些看似无生命的砖块，已经成为连接家庭成员的“纽带”，是每个人在生活中保存难忘记忆的一种方式。因此，Xây Xưa诞生了，带着传播对LEGO热情的愿望，让更多人看到，在LEGO的世界里没有年龄或技能的界限。每一块砖都可以成为更大事物的一部分。",
     "about.activities.title": "活动",
